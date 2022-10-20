@@ -1,0 +1,5 @@
+employee_file = open("employees.txt", "a")
+
+employee_file.write("n\Kelly - Customer Service") # append new entry at end of file with line break
+
+employee_file.close()
