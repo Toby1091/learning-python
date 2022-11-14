@@ -1,8 +1,0 @@
-employee_file = open("employees.txt", "r") # read file
-open("employees.txt", "w") # open to write file
-open("employees.txt", "a") # append file, i.e. cannot modify but add
-open("employees.txt", "r+w") # read + write file
-employee_file.close()
-print(employee_file.readlines()) # takes all lines and puts them in a list
-print(employee_file.readlines()[1]) # retrieves line at index=1
-
