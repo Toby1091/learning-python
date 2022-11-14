@@ -1,0 +1,13 @@
+# creating class for central bank speeches
+
+class Speech:
+    
+    def __init__(self, author, date, word_length, keyword_count):     #this is the constructor
+        self.author = author
+        self.date = date
+        self.word_length = word_length
+        self.keyword_count = keyword_count
+
+speech_1 = Speech("Mauderer", "02032022", 1000, 10)
+
+print(speech_1)
