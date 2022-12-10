@@ -1,4 +1,5 @@
 def compute_aver(numbers):
+    # The following is just a shorthand for "if len(numbers)>0"
     if numbers: # Read as: if the statement "I swear, it's an empty list!" is a lie, run the code. Only if it's not a lie, run the rest
         total = sum(numbers)
         len_list = len(numbers)
@@ -7,7 +8,7 @@ def compute_aver(numbers):
     else:
         return 0
 
-print(int(compute_aver([1,2,3,34,4,5])))
+print(int(compute_aver([])))
 
 '''
 Comment Chat GPT: The code above is a simpler way to check if the numbers list is empty and return 0 if it is. 
