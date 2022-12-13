@@ -2,8 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 
 url = "https://www.ultimate-guitar.com/explore"
-result = requests.get(url).text
-html_doc = BeautifulSoup(result, "html.parser")
+url_result = requests.get(url).text
+html_doc = BeautifulSoup(url_result, "html.parser")
 
 tag = html_doc.find("div", class_="js-store")
 mumblejumble = tag["data-content"]
@@ -14,13 +14,7 @@ start_string = "tab_url"
 uncleaned_link_list = []
 
 # Produce a list where each element in the list is a string à la "tab_url":"https://tabs.ultimate-guitar.com/..."
-def extract_unfiltered_link_elements(string_to_be_cleaned):
-    for element in mumblejumble_split:
-        if element.startswith('"tab_url"'):
-            uncleaned_link_list.append(element)
-    return uncleaned_link_list
-
-uncleaned_link_list = extract_unfiltered_link_elements(mumblejumble_split)
+uncleaned_link_list = [element for element in mumblejumble_split if element.startswith('"tab_url"')]
 
 # Clean the list by stripping away the "tab_url":
 
