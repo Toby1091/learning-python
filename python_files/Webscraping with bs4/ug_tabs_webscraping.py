@@ -18,13 +18,9 @@ uncleaned_link_list = [element for element in mumblejumble_split if element.star
 
 # Clean the list by stripping away the "tab_url":
 
-cleaned_link_list = []
+cleaned_link_list = [element.split(':')[2].strip('"').strip('"//') for element in uncleaned_link_list]
 
-for element in uncleaned_link_list:
-    element_split = element.split(':')
-    element_split[2] = element_split[2].strip('"')
-    element_split[2] = element_split[2].strip('"//')
-    cleaned_link_list.append(element_split[2])
+
 
 for element in cleaned_link_list:
     print(element)
